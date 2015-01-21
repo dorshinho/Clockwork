@@ -17,4 +17,19 @@ function app(){
         // start app?
     })
 
+var h1s = [].slice.call(document.querySelectorAll('h1'));
+
+
+setInterval(function(){
+    var d = new Date();
+
+    var parts = [d.getHours(), d.getMinutes(), d.getSeconds()]
+
+    h1s.forEach(function(el){
+        el.innerHTML = parts.join(":")
+    })
+         document.getElementById("backdrop").style.backgroundColor = "rgb(" + Math.floor((d.getHours() / .0705)) + ", " + Math.floor((d.getMinutes() / .387)) + ", " + Math.floor((d.getSeconds() / .255)) + ")";
+
+}, 1*1000)
+
 }
